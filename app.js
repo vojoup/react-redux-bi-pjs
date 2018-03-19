@@ -1,14 +1,18 @@
 let martin = new User('vondrm12@fit.cvut.cz');
 let pririz = new Group('PřiŘíz', martin);
-let elastic = new Task('Analýza dat', pririz, new Date('21.03.2018'), 'Analýza dat pomocí ELK stack.');
 
 martin.addGroup(pririz);
-pririz.addTask(elastic);
 
+let taskManager = new TaskManager();
+taskManager.users.push(martin);
+
+taskManager.addTask(pririz, 'Přečíst dokumentaci', new Date('19.03.2018'));
+taskManager.addTask(pririz, 'Analýza dat', new Date('21.03.2018'));
 console.log(martin.toString());
-console.log(martin.checkConsistency());
-let vojta = new User('jirkovoj@fit.cvut.cz');
-pririz.owner = vojta;
-console.log(martin.checkConsistency());
-console.log(martin.serialize());
-console.log(martin);
+let tasks = taskManager.findMatchingTasks('dat', martin);
+tasks[0].done = true;
+console.log(tasks[0].toString());
+taskManager.deleteTask(tasks[0].id);
+console.log(martin.toString());
+console.log(taskManager.findAllTasks(martin));
+console.log(taskManager.findTask(tasks[0].id));
