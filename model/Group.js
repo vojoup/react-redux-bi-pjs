@@ -1,6 +1,6 @@
 class Group {
     constructor(title, owner) {
-        this.id = 1;
+        this.id = (Date.now() * 10) + (Math.floor(Math.random() * 10));
         this.title = title;
         this.owner = owner;
         this.tasks = [];
