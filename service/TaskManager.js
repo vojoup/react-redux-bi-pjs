@@ -53,8 +53,7 @@ class TaskManager {
 
         for (let i = 0; i < this.tasks.length; i++) {
             if (this.tasks[i].id === id && this.tasks[i].done) {
-                let index = this.tasks[i].group.tasks.indexOf(this.tasks[i]);
-                this.tasks[i].group.tasks.splice(index, 1);
+                this.tasks[i].group.removeTask(this.tasks[i]);
                 this.tasks.splice(i, 1);
                 return true;
             }
