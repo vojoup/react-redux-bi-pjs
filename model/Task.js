@@ -1,6 +1,6 @@
 class Task {
     constructor(title, group, dueDate, description = '') {
-        this.id = (Date.now() * 10) + (Math.floor(Math.random() * 10));
+        this.id = (Date.now() * 1000) + (Math.floor(Math.random() * 1000));
         this.title = title;
         this.description = description;
         this.done = false;

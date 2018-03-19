@@ -1,6 +1,6 @@
 class Group {
     constructor(title, owner) {
-        this.id = (Date.now() * 10) + (Math.floor(Math.random() * 10));
+        this.id = (Date.now() * 1000) + (Math.floor(Math.random() * 1000));
         this.title = title;
         this.owner = owner;
         this.tasks = [];
@@ -9,6 +9,14 @@ class Group {
     addTask(task) {
         task.group = this;
         this.tasks.push(task);
+    }
+
+    removeTask(task) {
+        let index = this.tasks.indexOf(task);
+
+        if (index > -1) {
+            this.tasks.splice(index, 1);
+        }
     }
 
     checkConsistency() {
