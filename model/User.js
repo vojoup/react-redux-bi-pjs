@@ -19,6 +19,21 @@ class User {
         return true;
     }
 
+    serialize() {
+        let json = {
+            email: this.email,
+            groups: this.groups.map(group => {
+                return {id: group.id, tasks: group.tasks.map(task => task.id)};
+            })
+        };
+
+        return JSON.stringify(json);
+    }
+
+    static deserialize(string) {
+        let json = JSON.parse(string);
+    }
+
     toString() {
         let string = `User ${this.email}:\n`;
         string += '\tgroups:\n';

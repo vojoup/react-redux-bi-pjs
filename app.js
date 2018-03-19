@@ -10,3 +10,5 @@ console.log(martin.checkConsistency());
 let vojta = new User('jirkovoj@fit.cvut.cz');
 pririz.owner = vojta;
 console.log(martin.checkConsistency());
+console.log(martin.serialize());
+console.log(martin);
