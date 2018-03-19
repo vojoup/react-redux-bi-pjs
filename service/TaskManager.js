@@ -43,14 +43,21 @@ class TaskManager {
     }
 
     addTask(group, title, dueDate) {
-        let task = new Task(title, group, dueDate);
+        let task = this.tasks.filter((task) => {
+            return task.title === title
+        });
+
+        if (task.length > 0) {
+            return false;
+        }
+
+        task = new Task(title, group, dueDate);
         group.addTask(task);
         this.tasks.push(task);
+        return true;
     }
 
     deleteTask(id) {
-
-
         for (let i = 0; i < this.tasks.length; i++) {
             if (this.tasks[i].id === id && this.tasks[i].done) {
                 this.tasks[i].group.removeTask(this.tasks[i]);
