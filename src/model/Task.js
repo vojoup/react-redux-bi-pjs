@@ -1,3 +1,5 @@
+'use strict';
+
 class Task {
     constructor(title, group, dueDate, description = '') {
         this.id = (Date.now() * 1000) + (Math.floor(Math.random() * 1000));
@@ -19,3 +21,5 @@ class Task {
         return string + '\n';
     }
 }
+
+export default Task;

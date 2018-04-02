@@ -1,3 +1,9 @@
+'use strict';
+
+import User from './model/User';
+import Group from './model/Group';
+import TaskManager from './service/TaskManager';
+
 let martin = new User('vondrm12@fit.cvut.cz');
 let pririz = new Group('PřiŘíz', martin);
 

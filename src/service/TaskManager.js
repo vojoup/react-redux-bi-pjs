@@ -1,3 +1,7 @@
+'use strict';
+
+import Task from '../model/Task';
+
 class TaskManager {
     constructor() {
         this.tasks = [];
@@ -69,3 +73,5 @@ class TaskManager {
         return false;
     }
 }
+
+export default TaskManager;

@@ -1,3 +1,5 @@
+'use strict';
+
 class User {
     constructor(email) {
         this.email = email;
@@ -45,3 +47,5 @@ class User {
         return string + '\n';
     }
 }
+
+export default User;

@@ -1,3 +1,5 @@
+'use strict';
+
 class Group {
     constructor(title, owner) {
         this.id = (Date.now() * 1000) + (Math.floor(Math.random() * 1000));
@@ -41,3 +43,5 @@ class Group {
         return string + '\n';
     }
 }
+
+export default Group;
