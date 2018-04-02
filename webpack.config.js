@@ -10,7 +10,11 @@ const config = {
     mode: 'development',
     plugins: [
         new HtmlWebpackPlugin({template: './index.html'})
-    ]
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        port: 9000
+    }
 };
 
 module.exports = config;
