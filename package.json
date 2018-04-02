@@ -1,5 +1,5 @@
 {
-  "name": "b-pjs.1-labs",
+  "name": "bi-pjs.1-labs",
   "version": "0.0.1",
   "description": "Reference project for BI-PJS.1 in spring semester 2018.",
   "license": "MIT",
@@ -8,13 +8,13 @@
     "url": "https://gitlab.com/bi-pjs.1/labs"
   },
   "dependencies": {
-    "html-webpack-plugin": "^3.1.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
   },
   "devDependencies": {
     "webpack": "^4.4.1",
     "webpack-dev-server": "^3.1.1",
-    "webpack-cli": "^2.0.13"
+    "webpack-cli": "^2.0.13",
+    "html-webpack-plugin": "^3.1.0"
   }
 }
