@@ -4,6 +4,10 @@ import User from './model/User';
 import Group from './model/Group';
 import TaskManager from './service/TaskManager';
 
+import App from './components/App';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 let martin = new User('vondrm12@fit.cvut.cz');
 let pririz = new Group('PřiŘíz', martin);
 
@@ -24,3 +28,5 @@ console.log(martin.toString());
 console.log(taskManager.findTask(id));
 let task = taskManager.findAllTasks(martin)[0];
 console.log(taskManager.findTask(task.id));
+
+ReactDOM.render(<App name="Martin"/>, document.getElementById('content'));
