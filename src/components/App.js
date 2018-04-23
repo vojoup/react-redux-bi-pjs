@@ -1,4 +1,5 @@
 import React from 'react'
+import User from "./User";
 
 class App extends React.Component {
     constructor(props) {
@@ -7,7 +8,10 @@ class App extends React.Component {
 
     render() {
         return (
-            <h1>Hello {this.props.name}</h1>
+            <React.Fragment>
+                <h1>BI-PJS.1 Úkolníček</h1>
+                <User user={this.props.user}/>
+            </React.Fragment>
         );
     }
 }
