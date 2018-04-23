@@ -8,7 +8,7 @@ class Task extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({done: !JSON.parse(event.target.value)});
+        this.setState({done: event.target.checked});
     }
 
     render() {
@@ -18,10 +18,11 @@ class Task extends React.Component {
 
         return (
             <label style={style}>
-                <input type="checkbox" value={this.state.done} onChange={this.handleChange}/>{this.props.task.title}
+                <input type="checkbox" checked={this.state.done} onChange={this.handleChange}/>{this.props.task.title}
             </label>
         );
     }
 }
 
 export default Task;
+``

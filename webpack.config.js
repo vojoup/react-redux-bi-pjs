@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-    entry: './src/app.js',
+    entry: './src/index.js',
     output: {
         filename: 'app.js',
         path: path.resolve(__dirname, 'dist')
@@ -18,7 +18,7 @@ const config = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({template: './index.html'})
+        new HtmlWebpackPlugin({template: './public/index.html'})
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
