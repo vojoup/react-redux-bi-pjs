@@ -14,7 +14,9 @@ class Group extends React.Component {
         return (
             <React.Fragment>
                 <h3>{this.props.group.title}</h3>
-                <ul>{tasks}</ul>
+                <ul>
+                    {tasks}
+                </ul>
             </React.Fragment>
         );
     }
