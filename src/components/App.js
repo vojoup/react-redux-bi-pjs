@@ -1,5 +1,7 @@
+'use strict';
+
 import React from 'react'
-import User from "./User";
+import User from './User';
 
 class App extends React.Component {
     constructor(props) {
