@@ -10,8 +10,8 @@ let pririz = new Group('PřiŘíz', vondrm12);
 vondrm12.addGroup(pririz);
 let taskManager = new TaskManager();
 taskManager.users.push(vondrm12);
-taskManager.addTask(pririz, 'Přečíst dokumentaci', new Date('19.03.2018'));
-taskManager.addTask(pririz, 'Analýza dat', new Date('21.03.2018'));
+taskManager.addTask(pririz, 'Přečíst dokumentaci', new Date('30.04.2018'));
+taskManager.addTask(pririz, 'Analýza dat', new Date('25.05.2018'));
 
 const initialState = {
     users: taskManager.users,
