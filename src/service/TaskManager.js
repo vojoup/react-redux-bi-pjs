@@ -72,6 +72,18 @@ class TaskManager {
 
         return false;
     }
+
+    findGroup(id) {
+        for (let i = 0; i < this.users.length; i++) {
+            for (let j = 0; j < this.users[i].groups.length; j++) {
+                if (this.users[i].groups[j].id === id) {
+                    return this.users[i].groups[j];
+                }
+            }
+        }
+
+        return null;
+    }
 }
 
 export default TaskManager;
