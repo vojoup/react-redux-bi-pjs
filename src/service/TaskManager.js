@@ -84,6 +84,11 @@ class TaskManager {
 
         return null;
     }
+
+    toggleDone(id) {
+        let task = this.findTask(id);
+        task.done = !task.done;
+    }
 }
 
 export default TaskManager;

@@ -26,7 +26,8 @@ export default function taskReducer(state = initialState, action) {
             taskManager.addTask(action.payload.title, group, action.payload.dueDate);
             return Object.assign({}, state, {tasks: taskManager.tasks});
         case DO_TASK:
-        // todo
+            taskManager.toggleDone(action.payload);
+            return Object.assign({}, state, {tasks: taskManager.tasks});
         case DELETE_TASK:
             taskManager.deleteTask(action.payload);
             return Object.assign({}, state, {tasks: taskManager.tasks});

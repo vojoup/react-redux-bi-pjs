@@ -1,29 +1,37 @@
 'use strict';
 
 import React from 'react';
+import {connect} from "react-redux";
+import {doTask} from "../actions/task";
 
 class Task extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {done: this.props.task.done};
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        this.setState({done: event.target.checked});
     }
 
     render() {
         const style = {
-            textDecoration: this.state.done ? 'line-through' : 'none'
+            textDecoration: this.props.task.done ? 'line-through' : 'none'
         };
 
         return (
             <label style={style}>
-                <input type="checkbox" checked={this.state.done} onChange={this.handleChange}/>{this.props.task.title}
+                <input type="checkbox" checked={this.props.task.done} onChange={() => {
+                    this.props.checkDone(this.props.task.id, this)
+                }}/>{this.props.task.title}
             </label>
         );
     }
 }
 
-export default Task;
+export default connect(
+    (state) => {
+        return {tasks: state.tasks};
+    },
+    (dispatch) => ({
+        checkDone: (taskID, component) => {
+            component.forceUpdate();
+            return dispatch(doTask(taskID))
+        }
+    })
+)(Task);
