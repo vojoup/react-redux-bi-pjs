@@ -34,7 +34,3 @@ export default function taskReducer(state = initialState, action) {
             return state;
     }
 }
-
-function f() {
-
-}
